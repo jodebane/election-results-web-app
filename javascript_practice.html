@@ -3,63 +3,61 @@
 <head><link rel="stylesheet" href="electionappcss.css"></head>
 <body>
 
-<h1>See US presidential Election results!</h1>
+<h1>US Presidential Election Results</h1>
 
 <div id="electionmain" class = "electionbuttons arrangehorizontally" >
-<p><button type="button" id="2020">2020 Election</button></p>
-<p><button type="button" id="2016">2016 Election</button></p>
+<p><button type="button" id="2020" class="electionbutton">2020 Election</button></p>
+<p><button type="button" id="2016" class ="electionbutton">2016 Election</button></p>
+<p><button type="button" id="2012" class="electionbutton">2012 Election</button></p>
+
 
 
 </div>
-
-
 
 <p id="demo">...</p>
 
 <script>
 
+//gets number of elements in election main div
+numb = document.getElementById("electionmain").childElementCount;
+
+//image sources
 const srcs = {
 
    2020: '270towin.png',
-   2016: '201019164452-2016-election-map.jpg'
+   2016: '201019164452-2016-election-map.jpg',
+   2012: '2012_large.png',
 
 }
 
-div.
-
-
-var elec2020 = document.getElementById("2020");
-var elec2016 = document.getElementById("2016");
-
-
-
-
+var yearelementlist =[]
+//election year variables
+//var elec2020 = document.getElementById("2020");
+//var elec2016 = document.getElementById("2016");
+//var elec2012 = document.getElementById("2012");
+//populate function that displays image source
 const populate = (year) => {
   demo.innerHTML = `<img src="${srcs[year]}" width=600 height=300>`;
-
-
 };
 
 //var el2020img = "<img src=270towin.png width=600 height=300>";
 //var el2016img = "<img src=201019164452-2016-election-map.jpg width=600 height=300>";
-
-
-
 //function the2020election(){
 //document.getElementById("demo").innerHTML=el2020img;
 
-const electionyears = [elec2020, elec2016]
-const electionyearinfo = [2020, 2016,] 
+//list of constants
+///const electionyears = [elec2020, elec2016, elec2012, elec2008]
+const electionyearinfo = [2020, 2016,2012] 
 
-
-for (let i = 0; i < electionyears.length; i++){
-    electionyears[i].addEventListener('click', () => populate(electionyearinfo[i]))
+for (let i=0; i<numb;i++){
+    tempvar = 2020-(4*i);
+    console.log(document.getElementById(tempvar));
+   document.getElementById(tempvar).addEventListener('click', () => populate(electionyearinfo[i]));
 }
 
-
-
-
+//for (let i = 0; i < electionyears.length; i++){
+  //  electionyears[i].addEventListener('click', () => populate(electionyearinfo[i]))
+//}
 </script>
-
 </body>
 </html>
