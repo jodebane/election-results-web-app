@@ -1,24 +1,53 @@
 <!DOCTYPE html>
 <html>
+<head><link rel="stylesheet" href="electionappcss.css"></head>
 <body>
 
 <h1>See US presidential Election results!</h1>
-<p><button type="button" onclick="the2020election()">2020 Election</button></p>
-<p><button type="button" onclick="the2016election()">2016 Election</button></p>
+
+<div class = "electionbuttons arrangehorizontally" >
+<p><button type="button" id="2020">2020 Election</button></p>
+<p><button type="button" id="2016">2016 Election</button></p>
+
+
+</div>
+
 
 
 <p id="demo">...</p>
 
 <script>
 
+const srcs = {
+  2020: '270towin.png',
+  2016: '201019164452-2016-election-map.jpg'
+};
 
 
-function the2020election(){
-document.getElementById("demo").innerHTML="<img src=270towin.png width=600 height=300>"
-}
-function the2016election(){
-    document.getElementById("demo").innerHTML="<img src=201019164452-2016-election-map.jpg width=600 height=300>"
-}
+var elec2020 = document.getElementById("2020");
+var elec2016 = document.getElementById("2016");
+
+
+
+
+const populate = (year) => {
+  demo.innerHTML = `<img src="${srcs[year]}" width=600 height=300>`;
+
+
+};
+
+//var el2020img = "<img src=270towin.png width=600 height=300>";
+//var el2016img = "<img src=201019164452-2016-election-map.jpg width=600 height=300>";
+
+
+
+//function the2020election(){
+//document.getElementById("demo").innerHTML=el2020img;
+
+
+elec2020.addEventListener("click", () => populate(2020))
+elec2016.addEventListener("click",() => populate(2016))
+
 </script>
 
 </body>
