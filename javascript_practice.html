@@ -5,7 +5,7 @@
 
 <h1>See US presidential Election results!</h1>
 
-<div class = "electionbuttons arrangehorizontally" >
+<div id="electionmain" class = "electionbuttons arrangehorizontally" >
 <p><button type="button" id="2020">2020 Election</button></p>
 <p><button type="button" id="2016">2016 Election</button></p>
 
@@ -19,9 +19,13 @@
 <script>
 
 const srcs = {
-  2020: '270towin.png',
-  2016: '201019164452-2016-election-map.jpg'
-};
+
+   2020: '270towin.png',
+   2016: '201019164452-2016-election-map.jpg'
+
+}
+
+div.
 
 
 var elec2020 = document.getElementById("2020");
@@ -44,9 +48,16 @@ const populate = (year) => {
 //function the2020election(){
 //document.getElementById("demo").innerHTML=el2020img;
 
+const electionyears = [elec2020, elec2016]
+const electionyearinfo = [2020, 2016,] 
 
-elec2020.addEventListener("click", () => populate(2020))
-elec2016.addEventListener("click",() => populate(2016))
+
+for (let i = 0; i < electionyears.length; i++){
+    electionyears[i].addEventListener('click', () => populate(electionyearinfo[i]))
+}
+
+
+
 
 </script>
 
